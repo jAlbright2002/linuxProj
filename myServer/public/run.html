@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <body>
+
+    <h2>Our Beautiful Website :)</h2>
+
+    <p>Type or paste script to run:</p>
+ 
+    <textarea  style="width: 90%; height: 200px;" type="text" name="scriptInput" id="scriptInput"></textarea>
+    <br>
+
+    <div onclick="sendToServer()" style="border: 1px solid black; margin: 10px; width: 150px; height: 40px;">Click to send to server</div>
+
+    <textarea style="border: 1px solid black; width: 90%; height: 200px;" name="scriptOutput" id='scriptOutput'></textarea>
+
+    <script>
+      async function sendToServer(){
+          let response = await fetch('http://localhost:3000/runScript', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                scriptInput: document.getElementById("scriptInput").value,
+                scriptOutput: "",
+                moreStuff: ""
+            })
+        });
+        response = await response.json();
+        document.getElementById("scriptOutput").innerHTML = response.scriptOutput;
+      }
+    </script>
+  </body>
+</html>
