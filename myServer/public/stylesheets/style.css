@@ -12,14 +12,38 @@ B5B135
 
 .buttonContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: #97C0A5;
   padding: 10px;
 }
 
-.nav .nav-item{
+
+.first-chunk {
+  border: 1px solid black;
+  margin: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  /*https://stackoverflow.com/questions/1179928/how-can-i-put-a-vertical-line-down-the-center-of-a-div*/
+  background: linear-gradient(to right, 
+                              transparent 0%, 
+                              transparent calc(50% - 0.81px), 
+                              black calc(50% - 0.8px), 
+                              black calc(50% + 0.8px), 
+                              transparent calc(50% + 0.81px), 
+                              transparent 100%); 
+}
+
+#outputBox {
+  display: flex;
+  margin: 0;
+  flex: 1;
+}
+
+.second-chunk {
+  border: 1px solid black;
+  margin: 0;
+  display: flex;
+  flex: 1;
 }
 
 .btn {
