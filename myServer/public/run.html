@@ -1,18 +1,6 @@
 <!DOCTYPE html>
-<html>
-  <body>
-
-    <h2>Our Beautiful Website :)</h2>
-
-    <p>Type or paste script to run:</p>
- 
-    <textarea  style="width: 90%; height: 200px;" type="text" name="scriptInput" id="scriptInput"></textarea>
-    <br>
-
-    <div onclick="sendToServer()" style="border: 1px solid black; margin: 10px; width: 150px; height: 40px;">Click to send to server</div>
-
-    <textarea style="border: 1px solid black; width: 90%; height: 200px;" name="scriptOutput" id='scriptOutput'></textarea>
-
+<html> 
+  <head>
     <script>
       async function sendToServer(){
           let response = await fetch('https://stunning-garbanzo-v6q44w4r7942x96g-3000.app.github.dev/runScript', {
@@ -30,5 +18,29 @@
         document.getElementById("scriptOutput").innerHTML = response.scriptOutput;
       }
     </script>
+
+<link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+  <body>
+
+  <div class="buttonContainer">
+    <button type="button" class="btn btn-primary btn-lg">Large button</button>
+    <button type="button" class="btn btn-secondary btn-lg">Large button</button>
+    <button type="button" class="btn btn-secondary btn-lg">Large button</button>
+  </div>
+
+
+    <div class="APIVisual"> 
+      <h2>API Visualisation</h2>
+      <p>E.g. Weather API</p>
+    </div>
+
+    <div class>
+
+    </div>
+    
+
+    <textarea style="border: 1px solid black; width: 90%; height: 200px;" name="scriptOutput" id='scriptOutput'></textarea>
+
   </body>
 </html>

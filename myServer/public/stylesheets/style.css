@@ -1,8 +1,31 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/*Colour Theme:
+375E55
+426E76
+97C0A5
+DDF0DB
+B5B135
+*/
+
+.body {
+  background-color: #426E76;
 }
 
-a {
-  color: #00B7FF;
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #97C0A5;
+  padding: 10px;
+}
+
+.nav .nav-item{
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  background-color: 375E55;
+  color: black;
+  border: 1rem solid DDF0DB;
+  margin: 1rem;
+  padding: 1rem;
 }
