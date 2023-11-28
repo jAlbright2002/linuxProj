@@ -3,6 +3,34 @@ var router = express.Router();
 const { exec } = require("child_process");
 const fs = require('fs')
 
+router.get('/run-zx-script', (req, res) => {
+  exec('zx ./zxBtn.mjs', (error, stdout, stderr) => {
+    if (error) {
+      console.log(`error: ${error.message}`);
+      return;
+    }
+    if (stderr) {
+      console.log(`stderr: ${stderr}`);
+      return;
+    }
+    res.send(stdout);
+  });
+});
+
+router.get('/run-zx-script2', (req, res) => {
+  exec('zx ./zxBtn2.mjs', (error, stdout, stderr) => {
+    if (error) {
+      console.log(`error: ${error.message}`);
+      return;
+    }
+    if (stderr) {
+      console.log(`stderr: ${stderr}`);
+      return;
+    }
+    res.send(stdout);
+  });
+});
+
 router.get('/', function(req, res, next) {
   res.render('index', {title: 'EXPRESS'});
 });

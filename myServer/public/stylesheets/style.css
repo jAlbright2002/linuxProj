@@ -37,6 +37,8 @@ B5B135
   display: flex;
   margin: 0;
   flex: 1;
+  height: 200px;
+  resize: none;
 }
 
 .second-chunk {

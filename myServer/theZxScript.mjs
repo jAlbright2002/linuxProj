@@ -9,7 +9,7 @@ const pokemon = await response.json();
 console.log(`Name: ${pokemon.name}`);
 console.log(`Type: ${pokemon.types.map(type => type.type.name).join(', ')}`);
 console.log(`ID: ${pokemon.id}`);
-console.log(`Height: ${pokemon.height}`);
+console.log(`Height: ${pokemon.heightA}`);
 console.log(`Weight: ${pokemon.weight}`);
 console.log('Abilities:');
 pokemon.abilities.forEach((ability) => console.log(`- ${ability.ability.name}`));
