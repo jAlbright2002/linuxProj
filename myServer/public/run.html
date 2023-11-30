@@ -46,23 +46,24 @@
     <button id="zxBtn" onclick="runZxScript()">Run ZX Script</button>
 
   </div>
-
-
-  <div class="first-chunk">
-    <div class="APIVisual"> 
-      <h2>API Visualisation</h2>
-      <p>E.g. Weather API</p>
+  
+  <div class="container">
+    <div class="input">
+      <input type="text" class="inputValue" placeholder="Enter Location">
+      <button class="button"><i class="fas fa-search"></i></button>
     </div>
 
-    <div class="file-upload">
-      <h2>File upload here</h2>
-      <label></label>
+    <div class="displayWeather">
+      <h1 class="temp">----°C</h1>
+      <p class="desc">---</p>
     </div>
   </div>
     
   <div class="second-chunk">
     <textarea id="outputBox">Output Box!</textarea>
   </div>
+
+  <script src="openweather_api/openWeather.js"></script>
 
   </body>
 </html>
