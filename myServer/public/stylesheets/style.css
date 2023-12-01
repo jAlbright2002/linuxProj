@@ -2,13 +2,14 @@
 375E55
 426E76
 97C0A5
-DDF0DB
+  DDF0DB
 B5B135
 */
 
 .body {
   background-color: #426E76;
 }
+
 
 .buttonContainer {
   display: flex;
@@ -17,13 +18,16 @@ B5B135
   padding: 10px;
 }
 
-
-.first-chunk {
+.container {
   border: 1px solid black;
   margin: 0;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column; 
+  align-items: center;
   /*https://stackoverflow.com/questions/1179928/how-can-i-put-a-vertical-line-down-the-center-of-a-div*/
+  /*  We should add this line centre down as it's own html class rather than a styling edit */
+  
+  /*
   background: linear-gradient(to right, 
                               transparent 0%, 
                               transparent calc(50% - 0.81px), 
@@ -31,6 +35,8 @@ B5B135
                               black calc(50% + 0.8px), 
                               transparent calc(50% + 0.81px), 
                               transparent 100%); 
+  */ 
+  
 }
 
 #outputBox {
