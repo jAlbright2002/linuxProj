@@ -20,14 +20,14 @@
       }
 
       async function runZxScript() {
-        const response = await fetch('https://stunning-garbanzo-v6q44w4r7942x96g-3000.app.github.dev/run-zx-script');
+        const response = await fetch('https://orange-giggle-979r7vqrjvrx2x69p-3000.app.github.dev/run-zx-script');
         const data = await response.text();
         //console.log(data)
         document.getElementById('outputBox').value = data;
       }
 
       async function runZxScript2() {
-        const response = await fetch('https://stunning-garbanzo-v6q44w4r7942x96g-3000.app.github.dev/run-zx-script2');
+        const response = await fetch('https://orange-giggle-979r7vqrjvrx2x69p-3000.app.github.dev/run-zx-script2');
         const data = await response.text();
         //console.log(data)
         document.getElementById('outputBox').value = data;
@@ -47,23 +47,17 @@
 
   </div>
 
-  
-  <div class="container">
-    <div class="input">
-      <input type="text" class="inputValue" placeholder="Enter Location">
-      <button class="button" onclick="sendToServer()">Search</button>
-    </div>
-
+  <div class="first-chunk"> 
     <div class="displayWeather">
       <h1 class="temp">----°C</h1>
       <p class="desc">---</p>
+    </div>
+
     <div class="file-upload">
       <h2>Write your own script!</h2>
       <textarea id="inputScript" onclick="this.value=''">Start typing...</textarea>
     </div>
   </div>
-
-  <div class="line"></div>
     
   <div class="second-chunk">
     <textarea id="outputBox">Script output goes here</textarea>

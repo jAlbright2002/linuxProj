@@ -1,12 +1,3 @@
-
-/*Colour Theme:
-375E55
-426E76
-97C0A5
-DDF0DB
-B5B135
-*/
-
 body {
   background-color: #DDF0DB;
 }
@@ -15,13 +6,11 @@ body {
   box-sizing: border-box;
 }
 
-
 html, body {
   margin: 0;
   padding: 0;
   height: 100vh; 
 }
-
 
 .buttonContainer {
   display: flex;
@@ -31,9 +20,7 @@ html, body {
   width: 100%;
 }
 
-
-.container {
-  border: 1px solid black;
+.first-chunk {
   margin: 1vh;
   display: flex;
   height: 40vh; 
@@ -43,28 +30,12 @@ html, body {
   margin: 0;
   flex: 1;
   display: flex;
-
-  flex-direction: column; 
-  align-items: center;
-  /*https://stackoverflow.com/questions/1179928/how-can-i-put-a-vertical-line-down-the-center-of-a-div*/
-  /*  We should add this line centre down as it's own html class rather than a styling edit */
-  
-  /*
-  background: linear-gradient(to right, 
-                              transparent 0%, 
-                              transparent calc(50% - 0.81px), 
-                              black calc(50% - 0.8px), 
-                              black calc(50% + 0.8px), 
-                              transparent calc(50% + 0.81px), 
-                              transparent 100%); 
-  */ 
-  
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.APIVisual {
+.displayWeather {
   margin: 0;
   flex: 1;
   display: flex;
