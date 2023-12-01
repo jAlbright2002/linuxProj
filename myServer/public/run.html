@@ -47,22 +47,29 @@
 
   </div>
 
-
-  <div class="first-chunk">
-    <div class="APIVisual"> 
-      <h2>API Visualisation</h2>
-      <p>E.g. Weather API</p>
+  
+  <div class="container">
+    <div class="input">
+      <input type="text" class="inputValue" placeholder="Enter Location">
+      <button class="button" onclick="sendToServer()">Search</button>
     </div>
 
+    <div class="displayWeather">
+      <h1 class="temp">----°C</h1>
+      <p class="desc">---</p>
     <div class="file-upload">
       <h2>Write your own script!</h2>
       <textarea id="inputScript" onclick="this.value=''">Start typing...</textarea>
     </div>
   </div>
+
+  <div class="line"></div>
     
   <div class="second-chunk">
     <textarea id="outputBox">Script output goes here</textarea>
   </div>
+
+  <script src="openweather_api/openWeather.js"></script>
 
   </body>
 </html>
