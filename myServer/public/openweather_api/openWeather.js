@@ -15,7 +15,7 @@ let desc = document.querySelector('.desc');
 button.addEventListener('click', function(){
 
     // Fection data from open weather API
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputvalue.value}&units=metric&appid=${KEY}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=Galway,ie&units=metric&appid=${KEY}`)
     .then(response => response.json())
     .then(
         displayData)
