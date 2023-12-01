@@ -20,9 +20,7 @@ button.addEventListener('click', function(){
     .then(
         displayData)
     .catch(err => alert('Wrong City name')); 
-
 })
-
 
 // Function to diplay weather on html document
 const displayData=(weather)=>{
