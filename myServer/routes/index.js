@@ -31,6 +31,20 @@ router.get('/run-zx-script2', (req, res) => {
   });
 });
 
+router.get('/run-zx-script3', (req, res) => {
+  exec('zx ./cpuMemScript.mjs', (error, stdout, stderr) => {
+    if (error) {
+      console.log(`error: ${error.message}`);
+      return;
+    }
+    if (stderr) {
+      console.log(`stderr: ${stderr}`);
+      return;
+    }
+    res.send(stdout);
+  });
+});
+
 router.get('/', function(req, res, next) {
   res.render('index', {title: 'EXPRESS'});
 });
