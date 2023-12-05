@@ -33,6 +33,13 @@
         document.getElementById('outputBox').value = data;
       }
 
+      async function runZxScript3() {
+        const response = await fetch('https://stunning-garbanzo-v6q44w4r7942x96g-3000.app.github.dev/run-zx-script3');
+        const data = await response.text();
+        //console.log(data)
+        document.getElementById('outputBox').value = data;
+      }
+
     </script>
 
 <link rel="stylesheet" href="stylesheets/style.css">
@@ -41,7 +48,7 @@
 
   <div class="buttonContainer">
     <button class="btn" id="zxBtn2" onclick="runZxScript2()">Command 1</button>
-    <button class="btn">Command 2</button>
+    <button class="btn" id="zxBtn3" onclick="runZxScript3()">Command 2</button>
     <button class="btn">Command 3</button>
     <button class="btn" onclick="runZxScript()">Command 4</button>
 
@@ -57,6 +64,7 @@
     <div class="displayWeather">
       <h1 class="temp">----°C</h1>
       <p class="desc">---</p>
+    </div>
     <div class="file-upload">
       <h2>Write your own script!</h2>
       <textarea id="inputScript" onclick="this.value=''">Start typing...</textarea>
