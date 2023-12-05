@@ -45,8 +45,8 @@ html, body {
 }
 
 #inputScript {
-  height: 30vh;
-  width: 90vh;
+  height: 10vh;
+  width: 60vh;
   border-radius: 5px;
   background-color: #CCE0CC;
 }
@@ -73,18 +73,29 @@ html, body {
   background-color: #DDF0DB;
   color: black;
   border-radius: 5px;
-  border: solid #DDF0DB;
+  border: solid #D2EBCF;
   margin: 0.5rem;
   padding: 1rem;
   transition: background-color 0.3s ease, border-color 0.3s ease; 
 }
 
-.btn:hover {
+.convBtn {
+  background-color: #CCE0CC;
+  color: black;
+  border-radius: 5px;
+  border: solid #B3D0B3;
+  margin: 0.5rem;
+  padding: 1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease; 
+}
+
+.btn:hover, .convBtn:hover {
   background-color: #ABDAB9; 
   border-color: #ABDAB9;
 }
 
-.btn:active {
+.btn:active, .convBtn:active {
   background-color: #426E76; 
   border-color: #426E76;
 }
+
