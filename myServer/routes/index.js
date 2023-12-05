@@ -59,7 +59,7 @@ router.post('/convert', function(req, res, next) {
 
   console.log(scriptInputString);
 
-  let command = `#!/usr/bin/env zx\nawait $\`scdl -l https://soundcloud.com/lildvrkie/genocide;\`;`;
+  let command = `#!/usr/bin/env zx\nawait $\`scdl -l ${scriptInputString}\`;`;
 
   try {
     // Write the script input string to the zx file
