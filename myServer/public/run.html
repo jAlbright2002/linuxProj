@@ -3,38 +3,35 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
-      async function sendToServer(){
-          let response = await fetch('https://glowing-rotary-phone-g4qj495jrqqgfw4gp-3000.app.github.dev/runScript', {
+      async function convertSC(){
+          let response = await fetch('https://bookish-carnival-q7prr6r4ggwf9757-3000.app.github.dev/convert', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                scriptInput: document.getElementById("scriptInput").value,
-                scriptOutput: "",
-                moreStuff: ""
+                scriptInput: document.getElementById("inputScript").value,
             })
         });
-        response = await response.json();
-        document.getElementById("scriptOutput").innerHTML = response.scriptOutput;
       }
 
+
       async function runZxScript() {
-        const response = await fetch('https://glowing-rotary-phone-g4qj495jrqqgfw4gp-3000.app.github.dev/run-zx-script');
+        const response = await fetch('https://bookish-carnival-q7prr6r4ggwf9757-3000.app.github.dev/run-zx-script');
         const data = await response.text();
         //console.log(data)
         document.getElementById('outputBox').value = data;
       }
 
       async function runZxScript2() {
-        const response = await fetch('https://glowing-rotary-phone-g4qj495jrqqgfw4gp-3000.app.github.dev/run-zx-script2');
+        const response = await fetch('https://bookish-carnival-q7prr6r4ggwf9757-3000.app.github.dev/run-zx-script2');
         const data = await response.text();
         //console.log(data)
         document.getElementById('outputBox').value = data;
       }
 
       async function runZxScript3() {
-        const response = await fetch('https://glowing-rotary-phone-g4qj495jrqqgfw4gp-3000.app.github.dev/run-zx-script3');
+        const response = await fetch('https://bookish-carnival-q7prr6r4ggwf9757-3000.app.github.dev/run-zx-script3');
         const data = await response.text();
         //console.log(data)
         document.getElementById('outputBox').value = data;
@@ -62,7 +59,7 @@
     <div class="file-upload">
       <h2>Enter a legal soundcloud song to convert from MP4 to MP3!</h2>
       <textarea id="inputScript" onclick="this.value=''">Start typing...</textarea>
-      <button class="convBtn">Convert!</button>
+      <button class="convBtn" onclick="convertSC()">Convert!</button>
     </div>
   </div>
     

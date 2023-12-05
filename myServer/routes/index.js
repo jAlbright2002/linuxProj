@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-const { exec } = require("child_process");
+const { execFile } = require("child_process");
 const fs = require('fs')
 
 router.get('/run-zx-script', (req, res) => {
-  exec('zx ./zxBtn.mjs', (error, stdout, stderr) => {
+  execFile('zx ./zxBtn.mjs', (error, stdout, stderr) => {
     if (error) {
       console.log(`error: ${error.message}`);
       return;
@@ -18,7 +18,7 @@ router.get('/run-zx-script', (req, res) => {
 });
 
 router.get('/run-zx-script2', (req, res) => {
-  exec('zx ./zxBtn2.mjs', (error, stdout, stderr) => {
+  execFile('zx ./zxBtn2.mjs', (error, stdout, stderr) => {
     if (error) {
       console.log(`error: ${error.message}`);
       return;
@@ -32,7 +32,7 @@ router.get('/run-zx-script2', (req, res) => {
 });
 
 router.get('/run-zx-script3', (req, res) => {
-  exec('zx ./cpuMemScript.mjs', (error, stdout, stderr) => {
+  execFile('zx ./cpuMemScript.mjs', (error, stdout, stderr) => {
     if (error) {
       console.log(`error: ${error.message}`);
       return;
@@ -49,18 +49,27 @@ router.get('/', function(req, res, next) {
   res.render('index', {title: 'EXPRESS'});
 });
 
-router.post('/runScript', function(req, res, next) {
+router.post('/convert', function(req, res, next) {
   var scrObject = req.body;
   var stdOutString = "";
   console.log(scrObject.scriptInput);
+
+  // Convert the script input to a JSON string
+  let scriptInputString = JSON.stringify(scrObject.scriptInput);
+
+  console.log(scriptInputString);
+
+  let command = `#!/usr/bin/env zx\nawait $\`scdl -l https://soundcloud.com/lildvrkie/genocide;\`;`;
+
   try {
-    fs.writeFileSync('./theZxScript.mjs', scrObject.scriptInput)
+    // Write the script input string to the zx file
+    fs.writeFileSync('./convertScript.mjs', command)
     //file written successfully
   } catch (err) {
     console.error(err)
   }
 
-  exec('./theZxScript.mjs', (error, stdout, stderr) => {
+  execFile('./convertScript.mjs', {maxBuffer: 1024*1024*500}, (error, stdout, stderr) => {
     if (error) {
         console.log(`error: ${error.message}`);
         return;
@@ -73,7 +82,10 @@ router.post('/runScript', function(req, res, next) {
     console.log(stdOutString);
     scrObject.scriptOutput = stdOutString;
     res.json(scrObject);
+    //res.download('./convertScript.mjs');
   });
 });
+
+
 
 module.exports = router;
