@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const { exec } = require("child_process");
 const fs = require('fs')
+const path = require('path'); 
 
 router.get('/run-zx-script', (req, res) => {
   exec('zx ./zxBtn.mjs', (error, stdout, stderr) => {
@@ -43,6 +44,11 @@ router.get('/run-zx-script3', (req, res) => {
     }
     res.send(stdout);
   });
+});
+
+router.get('myServer/routes/resetServerScript.mjs', (req, res, next) => {
+  res.setHeader('Content-Type', 'application/javascript');
+  res.sendFile(path.join(__dirname, 'resetServerScript.mjs'));
 });
 
 router.get('/', function(req, res, next) {
